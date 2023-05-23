@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, TextField, Typography, colors } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 
 class Auth extends Component {
   constructor(props) {
@@ -33,6 +33,7 @@ class Auth extends Component {
       this.props.updateAuth(1);
 
       //redirect
+      // <Route path="/Navigation" element={<Navigation />} />;
     } else {
       alert("Invalid username & password");
     }

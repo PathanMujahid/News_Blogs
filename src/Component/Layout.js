@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navigation from "./Navigation";
 import Auth from "./Auth";
+import Home from "./Home";
+import { Article } from "./Article";
 
 function Layout() {
   const isAuth = parseInt(localStorage.getItem("isAuth")) || 0;
@@ -18,11 +19,13 @@ function Layout() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <Routes>
-          <Route path="./Navigation.js" element={<Navigation />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/article" exact component={() => <Article />} />
+
+        {/* <Route path="/trendings" element={<Trendings />} />
+        <Route path="/technews" element={<Technews />} /> */}
+      </Routes>
     </>
   );
 }
